@@ -1,63 +1,154 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>小白专用 GitHub Pages 部署步骤</title>
-
-    <style>
-      body{margin:0;background:#0b1222;color:#e5e7eb}
-      .container{max-width:860px;margin:40px auto;padding:28px;background:#0f172a;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.06)}
-      h1{margin:0 0 12px;font-size:28px}
-      .meta{color:#94a3b8;font-size:14px;margin-bottom:16px}
-      pre{white-space:pre-wrap;word-wrap:break-word;font: 14px/1.7 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
-      p{margin:0 0 1em;line-height:1.9}
-      .content{font-size:16px}
-    </style>
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小白专用 GitHub Pages 部署步骤</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+    header p {
+      margin-top: 10px;
+      font-size: 16px;
+      opacity: 0.9;
+    }
+    nav {
+      background: #fff;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #0073e6;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      max-width: 800px;
+      margin: 30px auto;
+      background: white;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    section h2 {
+      color: #0073e6;
+      margin-bottom: 15px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    footer {
+      text-align: center;
+      background: #f0f0f0;
+      padding: 20px;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
+  <header>
     <h1>小白专用 GitHub Pages 部署步骤</h1>
-    <div class="meta">通过 TXT→HTML 转换生成 · 2025/8/22 17:17:19</div>
-    <pre class="content">小白专用 GitHub Pages 部署步骤
-🔹前提准备
-一个 GitHub
- 账号（免费注册）。
-你本地已经有一个网页文件，比如 index.html。
-🚀 步骤 1：新建仓库
-1.登录 GitHub
-2.右上角点 “+” → New repository。
-3.输入仓库名（推荐 my-website 或 username.github.io）。
-如果你想要 个性主页，必须用格式：你的用户名.github.io。
-例：用户名是 xiaoming → 仓库名必须是 xiaoming.github.io。
-4.选择 Public（公开）。
-5.点击 Create repository。
-🚀 步骤 2：上传网页文件
-1.在仓库页面里，点 “Add file” → “Upload files”。
-2.上传你的网页文件：
-至少要有一个 index.html（这是网站默认入口）。
-其他的 CSS、图片文件一并上传。
-3.点 Commit changes(提交更改) 保存。
-🚀 步骤 3：开启 GitHub Pages
-1.打开仓库 → 点上方的 Settings。
-2.左边菜单找到 Pages。
-3.在 Build and deployment → Source 里，选择：
-Deploy from branch
-分支选 main，文件夹选 / (root)。
-4.点 Save。
-🚀 步骤 4：等待部署
-GitHub 会自动帮你部署，大概需要 1-2 分钟。
-部署成功后，页面会显示一个网址，比如：
-https://你的用户名.github.io/
-打开网址，就能看到你上传的网页啦！ 🎉
-🚀 步骤 5（可选）：绑定自己的域名
-如果你买了自己的域名，可以在 Pages 设置里添加自定义域名。
-GitHub 会自动配置免费 HTTPS。
-✅ 小结
-GitHub Pages 免费、永久有效，非常适合小白建 个人主页、说明文档、静态网站。
-只要你更新仓库内容，网站就会自动刷新。
-</pre>
-  </div>
+    <p>通过 TXT→HTML 转换生成 · 2025/8/22 17:17:19</p>
+  </header>
+
+  <nav>
+    <a href="#ready">前提准备</a>
+    <a href="#step1">步骤 1</a>
+    <a href="#step2">步骤 2</a>
+    <a href="#step3">步骤 3</a>
+    <a href="#step4">步骤 4</a>
+    <a href="#step5">步骤 5</a>
+    <a href="#summary">小结</a>
+  </nav>
+
+  <section id="ready">
+    <h2>🔹 前提准备</h2>
+    <ul>
+      <li>一个 GitHub 账号（免费注册）。</li>
+      <li>你本地已经有一个网页文件，比如 <code>index.html</code>。</li>
+    </ul>
+  </section>
+
+  <section id="step1">
+    <h2>🚀 步骤 1：新建仓库</h2>
+    <ol>
+      <li>登录 GitHub</li>
+      <li>右上角点 “+” → New repository。</li>
+      <li>输入仓库名（推荐 <code>my-website</code> 或 <code>username.github.io</code>）。</li>
+      <li>如果你想要个性主页，必须用格式：<b>你的用户名.github.io</b>。</li>
+      <li>例：用户名是 <code>xiaoming</code> → 仓库名必须是 <code>xiaoming.github.io</code>。</li>
+      <li>选择 Public（公开）。</li>
+      <li>点击 Create repository。</li>
+    </ol>
+  </section>
+
+  <section id="step2">
+    <h2>🚀 步骤 2：上传网页文件</h2>
+    <ol>
+      <li>在仓库页面里，点 “Add file” → “Upload files”。</li>
+      <li>上传你的网页文件：至少要有一个 <code>index.html</code>（这是网站默认入口）。</li>
+      <li>其他的 CSS、图片文件一并上传。</li>
+      <li>点 Commit changes(提交更改) 保存。</li>
+    </ol>
+  </section>
+
+  <section id="step3">
+    <h2>🚀 步骤 3：开启 GitHub Pages</h2>
+    <ol>
+      <li>打开仓库 → 点上方的 Settings。</li>
+      <li>左边菜单找到 Pages。</li>
+      <li>在 Build and deployment → Source 里，选择：Deploy from branch</li>
+      <li>分支选 <code>main</code>，文件夹选 <code>/(root)</code>。</li>
+      <li>点 Save。</li>
+    </ol>
+  </section>
+
+  <section id="step4">
+    <h2>🚀 步骤 4：等待部署</h2>
+    <p>GitHub 会自动帮你部署，大概需要 1-2 分钟。<br>
+    部署成功后，页面会显示一个网址，比如：<br>
+    <code>https://你的用户名.github.io/</code><br>
+    打开网址，就能看到你上传的网页啦！ 🎉</p>
+  </section>
+
+  <section id="step5">
+    <h2>🚀 步骤 5（可选）：绑定自己的域名</h2>
+    <p>如果你买了自己的域名，可以在 Pages 设置里添加自定义域名。<br>
+    GitHub 会自动配置免费 HTTPS。</p>
+  </section>
+
+  <section id="summary">
+    <h2>✅ 小结</h2>
+    <p>GitHub Pages 免费、永久有效，非常适合小白建个人主页、说明文档、静态网站。<br>
+    只要你更新仓库内容，网站就会自动刷新。</p>
+  </section>
+
+  <footer>
+    <p>© 2025 小白专用 GitHub Pages 部署教程</p>
+  </footer>
 </body>
 </html>
